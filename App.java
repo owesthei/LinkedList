@@ -1,13 +1,10 @@
-import java.util.LinkedList;
-
 public class App {
     public static void main(String[] args) {
         System.out.println("Linked List App");
 
-
         long startTimeJava = System.nanoTime();
 
-        LinkedList<Integer> linkedListJava = new LinkedList<>();
+        java.util.LinkedList<Integer> linkedListJava = new java.util.LinkedList<>();
 
         linkedListJava.addFirst(1);
         linkedListJava.addLast(2);
@@ -23,13 +20,14 @@ public class App {
         linkedListJava.addLast(4);
         linkedListJava.removeLast();
         linkedListJava.addFirst(5);
+        linkedListJava.remove(4);
 
         long estimatedTimeJava = System.nanoTime() - startTimeJava;
 
 
         long startTimeOlaf = System.nanoTime();
 
-        LinkedListOlaf<Integer> linkedListOlaf = new LinkedListOlaf<>();
+        LinkedList<Integer> linkedListOlaf = new LinkedList<>();
 
         linkedListOlaf.addFirst(1);
         linkedListOlaf.addLast(2);
@@ -45,12 +43,15 @@ public class App {
         linkedListOlaf.addLast(4);
         linkedListOlaf.removeLast();
         linkedListOlaf.addFirst(5);
+        linkedListOlaf.remove(4);
 
         long estimatedTimeOlaf = System.nanoTime() - startTimeOlaf;
 
 
         System.out.println(linkedListJava);
         System.out.println(linkedListOlaf);
+
+        linkedListOlaf.traverse();
 
         System.out.println("Duration: " + estimatedTimeJava + " vs. " + estimatedTimeOlaf);
     }
