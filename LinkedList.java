@@ -111,23 +111,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 
     @Override
     public void traverse() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-
-        Node<T> current = head;
-
-        if (current != null) {
-            sb.append(String.format("%s", current.getData()));
-            current = current.getNext();
-        }
-
-        while (current != null) {
-            sb.append(String.format(", %s", current.getData()));
-            current = current.getNext();
-        }
-
-        sb.append("]");
-        System.out.println(sb);
+        System.out.println(this);
     }
 
     @Override
@@ -152,7 +136,6 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
- 
         sb.append("[");
 
         Node current = head;
@@ -168,7 +151,6 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         }
 
         sb.append("]");
-
         return sb.toString();
     }
 }
