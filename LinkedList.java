@@ -11,9 +11,8 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
             tail = newNode;
         }
         else {
-            Node<T> oldHead = head;
+            newNode.setNext(head);
             head = newNode;
-            head.setNext(oldHead);
         }
     }
 
@@ -151,6 +150,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         }
 
         sb.append("]");
+
         return sb.toString();
     }
 }
